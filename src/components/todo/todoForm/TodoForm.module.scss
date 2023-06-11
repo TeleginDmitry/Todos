@@ -1,0 +1,15 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 7px;
+  .input {
+    padding: 10px;
+    border: 1px solid #00000060;
+  }
+  .button {
+    padding: 10px;
+    border: 1px solid #00000060;
+  }
+}

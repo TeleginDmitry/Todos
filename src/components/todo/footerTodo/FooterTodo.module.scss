@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+
+  .count {
+    .count__text {
+
+    }
+  }
+  .actions {
+    display: flex;
+    gap: 10px;
+    .action {
+      padding: 3px;
+      cursor: pointer;
+      &__active {
+        border: 1px solid #00000065;
+      }
+    }
+  }
+  .clear {
+    cursor: pointer;
+    .clear__text {
+
+    }
+  }
+}
