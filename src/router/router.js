@@ -3,7 +3,7 @@ import { Todos } from 'pages/index'
 
 export const router = createBrowserRouter([
 	{
-		path: '/',
+		path: '/*',
 		element: <Todos></Todos>,
 	},
 ])

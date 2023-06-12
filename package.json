@@ -2,6 +2,7 @@
 	"name": "app",
 	"version": "0.1.0",
 	"private": true,
+	"homepage": "https://d1mas1k2021.github.io/Todos",
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.9.5",
 		"@testing-library/jest-dom": "^5.16.5",
@@ -21,6 +22,8 @@
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
+		"predeploy": "craco build",
+		"deploy": "gh-pages -d build",
 		"start": "craco start",
 		"build": "craco build",
 		"test": "craco test",
@@ -46,6 +49,7 @@
 	},
 	"devDependencies": {
 		"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-		"@craco/craco": "^7.1.0"
+		"@craco/craco": "^7.1.0",
+		"gh-pages": "^5.0.0"
 	}
 }

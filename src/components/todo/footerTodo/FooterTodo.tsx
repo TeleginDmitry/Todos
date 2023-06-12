@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import styles from './FooterTodo.module.scss'
 import { classNames } from 'utils/classNames/classNames'
 import { footerActions } from './footerActions'
@@ -6,13 +6,12 @@ import { useSearchParams } from 'react-router-dom'
 import { SORT_PARAM } from 'config/config'
 import useActions from 'hooks/useActions'
 
-
 interface IFooterTodo {
 	count: number
 }
 
-const FooterTodo = ({count}: IFooterTodo) => {
-	const {clearCompletedTodos} = useActions()
+const FooterTodo = ({ count }: IFooterTodo) => {
+	const { clearCompletedTodos } = useActions()
 
 	const [searchParams, setSearchParams] = useSearchParams()
 	const sortParam = searchParams.get(SORT_PARAM)
@@ -51,4 +50,4 @@ const FooterTodo = ({count}: IFooterTodo) => {
 	)
 }
 
-export default FooterTodo
+export default memo(FooterTodo)

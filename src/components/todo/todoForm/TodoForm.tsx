@@ -1,5 +1,5 @@
 import useActions from 'hooks/useActions'
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import createTodo from 'utils/createTodo'
 import styles from './TodoForm.module.scss'
 
@@ -41,4 +41,4 @@ const TodoForm = () => {
 	)
 }
 
-export default TodoForm
+export default memo(TodoForm)

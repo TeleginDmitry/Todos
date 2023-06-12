@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import TodoList from './todoList/TodoList'
 import TodoForm from './todoForm/TodoForm'
 import styles from './Todo.module.scss'
@@ -7,27 +7,17 @@ import { useTypedSelector } from 'hooks/useTypedSelector'
 import { useSearchParams } from 'react-router-dom'
 import { SORT_PARAM } from 'config/config'
 import { VALUE_ACTIVE, VALUE_COMPLETED } from 'config/config'
+import { useSortTodo } from 'hooks/useSortTodo'
 
 function Todo() {
 	const todos = useTypedSelector(state => state.todos.todos)
 
-	const [todoList, setTodoList] = useState(todos)
+	const { selectCompletedTodos, selectIncompleteTodos, selectTodos, todoList } =
+		useSortTodo({ todos })
 
 	const [searchParams, setSearchParams] = useSearchParams()
 
 	const sortParam = searchParams.get(SORT_PARAM)
-
-	function selectTodos() {
-		setTodoList(() => todos)
-	}
-
-	function selectCompletedTodos() {
-		setTodoList(() => todos.filter(todo => todo.completed))
-	}
-
-	function selectIncompleteTodos() {
-		setTodoList(() => todos.filter(todo => !todo.completed))
-	}
 
 	useEffect(() => {
 		sortParam === VALUE_ACTIVE
